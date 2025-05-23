@@ -4,7 +4,7 @@ INTERFAZ = 'any'  # Cambia a 'eth0', 'wlan0', etc. si lo deseas
 
 print("🔍 Capturando 5 paquetes... mostrando capas por paquete:\n")
 
-# Captura 5 paquetes que cumplan el filtro DNS (rápido y filtrado)
+# Captura 5 paquetes que cumplan el filtro dnss (rápido y filtrado)
 capture = pyshark.LiveCapture(interface=INTERFAZ, display_filter='dns')
 
 # Captura 5 paquetes
