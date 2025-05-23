@@ -1,5 +1,5 @@
 import pyshark
-
+#test
 INTERFAZ = 'any'  # Cambia a 'eth0', 'wlan0', etc. si lo deseas
 
 print("🔍 Capturando 5 paquetes... mostrando capas por paquete:\n")
