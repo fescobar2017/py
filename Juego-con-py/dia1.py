@@ -7,24 +7,24 @@ os.environ['SDL_AUDIODRIVER'] = 'ALSA'
 
 #inicializar pygame
 pygame.init()
-pygame.mixer.init(44100, -16,2,2048)
+#pygame.mixer.init(44100, -16,2,2048)
 
 #crear la pantalla
 pantalla = pygame.display.set_mode((800,600))
 
 #Ttulo e icono
-pygame.display.set_caption("Invacion Espacial")
-icono = pygame.image.load("ovni.png")
+pygame.display.set_caption("/home/francisco/Escritorio/Python/Juego-con-py/Invacion Espacial")
+icono = pygame.image.load("/home/francisco/Escritorio/Python/Juego-con-py/ovni.png")
 pygame.display.set_icon(icono)
-fondo = pygame.image.load("Fondo.jpg")
+fondo = pygame.image.load("/home/francisco/Escritorio/Python/Juego-con-py/Fondo.jpg")
 
 #Musica fondo
 
-mixer.music.load('MusicaFondo.mp3')
-mixer.music.play(-1)
+#mixer.music.load('/home/francisco/Escritorio/Python/Juego-con-py/MusicaFondo.mp3')
+#mixer.music.play(-1)
 
 #Variables Jugador
-img_jugador = pygame.image.load("cohete.png")
+img_jugador = pygame.image.load("/home/francisco/Escritorio/Python/Juego-con-py/cohete.png")
 jugador_x = 368
 jugador_y = 500
 jugador_x_cambio = 0
@@ -36,11 +36,11 @@ enemigo_x = []
 enemigo_y = []
 enemigo_x_cambio = []
 enemigo_y_cambio = []
-cantidad_enemigos = 5
+cantidad_enemigos = 15
 
 for e in range(cantidad_enemigos):
 
-    img_enemigo.append(pygame.image.load("enemigo.png"))
+    img_enemigo.append(pygame.image.load("/home/francisco/Escritorio/Python/Juego-con-py/enemigo.png"))
     enemigo_x.append(random.randint(0,736))
     enemigo_y.append(random.randint(50,200))
     enemigo_x_cambio.append(0.1)
@@ -48,7 +48,7 @@ for e in range(cantidad_enemigos):
 
 #Variables de la bala
 
-img_bala = pygame.image.load("bala.png")
+img_bala = pygame.image.load("/home/francisco/Escritorio/Python/Juego-con-py/bala.png")
 bala_x = 0
 bala_y = 500
 bala_x_cambio = 0
