@@ -58,7 +58,7 @@ bala_visible = False
 
 #Puntajes
 
-puntaje = 0
+puntaje = 1
 fuente = pygame.font.Font('freesansbold.ttf',32)
 texto_x = 1
 texto_y = 1
