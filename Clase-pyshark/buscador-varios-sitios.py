@@ -1,14 +1,13 @@
 import pyshark
 import csv
+from collections import Counter
+
 INTERFAZ = 'any'
-
 capture = pyshark.LiveCapture(interface=INTERFAZ, display_filter='dns')
-
 
 resultados_dns = []
 cantidad = 0
 print("🔍 Escuchando tráfico DNS...\n")
-
 
 for packet in capture:
     try:
@@ -16,45 +15,24 @@ for packet in capture:
             query_name = packet.dns.qry_name.lower()
             print(f"Consulta DNS detectada: {query_name}")
             resultados_dns.append(query_name)
-            cantidad = cantidad + 1
-        if cantidad == 1000:
+            cantidad += 1
+        if cantidad == 100:
             break
     except AttributeError:
         pass
 
-# Paso 1: Contar repeticiones
-frecuencias = {}
+# Contar y obtener top 5 con Counter
+frecuencias = Counter(resultados_dns)
+top5 = frecuencias.most_common(5)
 
-for dominio in resultados_dns:
-    if dominio in frecuencias:
-        frecuencias[dominio] += 1
-    else:
-        frecuencias[dominio] = 1
-
-# Paso 2: Encontrar el top 5 manualmente
-top5 = []
-
-for _ in range(5):
-    max_dominio = None
-    max_veces = -1
-    for dominio, veces in frecuencias.items():
-        if veces > max_veces and dominio not in [d for d, _ in top5]:
-            max_dominio = dominio
-            max_veces = veces
-    if max_dominio:
-        top5.append((max_dominio, max_veces))
-
+# Guardar en CSV
 with open('resultados_dns.csv', mode='w', newline='') as archivo_csv:
-    escritor = csv.writer(archivo_csv, delimiter=',')
-    escritor.writerow(['Consultas DNS'])      
-    escritor.writerow(top5)          
+    escritor = csv.writer(archivo_csv)
+    escritor.writerow(['Dominio', 'Repeticiones'])
+    escritor.writerows(top5)
 
-
-print(''' Contenido del archivo        
-         Resultados_dns.csv:
-         Abriendo file ....
-          ''')
-
+# Mostrar el contenido del CSV
+print('''\nContenido del archivo resultados_dns.csv:\nAbriendo file....\n''')
 with open('resultados_dns.csv', mode='r') as archivo_csv:
     for linea in archivo_csv:
-        print(linea.strip())
+        print(linea)
