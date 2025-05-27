@@ -6,7 +6,7 @@ capture = pyshark.LiveCapture(interface=INTERFAZ, display_filter='dns')
 
 resultados_dns = []
 
-print("🔍 Escuchando tráfico DNS...\n")
+print("Escuchando tráfico DNS...\n")
 
 
 for packet in capture:
@@ -18,7 +18,7 @@ for packet in capture:
             
             
             if 'eicar' in query_name:
-                print("⚠️ Tráfico hacia eicar detectado. Finalizando captura.")
+                print(" Tráfico hacia eicar detectado. Finalizando captura.")
                 break
     except AttributeError:
         pass
