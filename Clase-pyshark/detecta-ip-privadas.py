@@ -19,7 +19,7 @@ for packet in capture:
             src_ip = packet.ip.src
             dst_ip = packet.ip.dst
 
-            if es_ip_privada(src_ip) or es_ip_privada(dst_ip):
+            if es_ip_privada(src_ip) or es_ip_privada(dst_ip):  #detecta en origen y destino
                 print(f"IP privada detectada:")
                 print(f" Origen: {src_ip} → Destino: {dst_ip}")
                 print("-" * 60)
