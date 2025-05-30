@@ -1,14 +1,8 @@
 import pyshark
 import csv
 INTERFAZ = 'any'
-
 capture = pyshark.LiveCapture(interface=INTERFAZ, display_filter='dns')
-
 resultados_dns = []
-
-print("Escuchando tráfico DNS...\n")
-
-
 for packet in capture:
     try:
         if hasattr(packet, 'dns') and hasattr(packet.dns, 'qry_name'):
@@ -22,7 +16,6 @@ for packet in capture:
                 break
     except AttributeError:
         pass
-
 
 with open('resultados_dns.csv', mode='w', newline='') as archivo_csv:
     escritor = csv.writer(archivo_csv, delimiter=',')

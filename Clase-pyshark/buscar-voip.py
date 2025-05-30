@@ -1,8 +1,6 @@
 import pyshark
 INTERFAZ = 'any'
-
 captura = pyshark.LiveCapture(interface='any', display_filter='rtp')
-
 for packet in captura:
     try:
         if hasattr(packet,'rtp'):

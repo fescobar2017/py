@@ -7,7 +7,6 @@ capture = pyshark.LiveCapture(interface=INTERFAZ, display_filter='dns')
 
 resultados_dns = []
 cantidad = 0
-print("🔍 Escuchando tráfico DNS...\n")
 
 for packet in capture:
     try:
