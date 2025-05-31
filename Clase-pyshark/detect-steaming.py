@@ -1,13 +1,11 @@
+#Busca Streaming
 import pyshark
-import csv
 INTERFAZ = 'any'
 
 capture = pyshark.LiveCapture(interface=INTERFAZ, display_filter='dns')
 streaming = ['youtube','netflix','video']
 contador = 0
 suma = 0
-print("Escuchando tráfico DNS...\n")
-
 
 for packet in capture.sniff_continuously(packet_count=200):
     try:

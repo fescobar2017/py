@@ -1,10 +1,7 @@
 import pyshark
 from collections import Counter
-
 INTERFAZ = 'any'
-
 captura = pyshark.LiveCapture(interface=INTERFAZ, display_filter="tcp.analysis.retransmission")
-
 retransmisiones_por_ip = Counter()
 
 try:

@@ -2,7 +2,7 @@ import pyshark
 
 INTERFAZ = 'any'
 
-print("🔍 Escuchando tráfico TLS...\n")
+print(" Escuchando tráfico TLS...\n")
 
 capture = pyshark.LiveCapture(interface=INTERFAZ, display_filter='ssl.handshake.certificate')
 

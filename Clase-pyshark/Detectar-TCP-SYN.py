@@ -1,6 +1,4 @@
-                         
 import pyshark
-
 INTERFAZ = 'wlo1'
 capture = pyshark.LiveCapture(interface=INTERFAZ)
 lista_syn = []

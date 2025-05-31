@@ -14,12 +14,9 @@ for packet in capture:
                 scaneados[origen]=set()
             scaneados[origen].add(portdest)
 
-            if len(scaneados[origen]) > 20:
-                    #print(f" Posible escaneo desde {origen}: {len(scaneados[origen])} puertos distintos")
+            if len(scaneados[origen]) > limite:
                     print(f" Escaneo desde {origen} ")
                     print("Puertos:", scaneados[origen])
-
-
     except AttributeError:
          pass
    
