@@ -1,6 +1,6 @@
 import pyshark
 interfaz = "any"
-num_paquetes = 100
+num_paquetes = 200
 paquetes =[]
 captura = pyshark.LiveCapture(interface=interfaz)
 for pkt in captura.sniff_continuously(packet_count=num_paquetes):
@@ -12,8 +12,10 @@ for pkt in captura.sniff_continuously(packet_count=num_paquetes):
         pass
 top_pesados = sorted(paquetes, key=lambda x: x[0], reverse=True)[:5]
 
-
+print('='*80)
+print('TOP MAS PESADOS')
 for tam, pkt in top_pesados:
+   
     try:
         print(f"{tam} bytes desde {pkt.ip.src} → {pkt.ip.dst} en capa {pkt.highest_layer}, puerto {pkt.tcp.port}")
     except:

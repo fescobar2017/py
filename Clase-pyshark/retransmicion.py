@@ -6,7 +6,6 @@ retransmisiones_por_ip = Counter()
 
 try:
     for packet in captura.sniff_continuously(packet_count=100):  # Puedes quitar el límite si quieres
-            print(packet)
             ip_src = packet.ip.src
             ip_dst = packet.ip.dst
             retransmisiones_por_ip[(ip_src, ip_dst)] += 1
