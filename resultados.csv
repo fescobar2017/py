@@ -1,0 +1,11 @@
+IP Origen,IP Destino/Dominio,Protocolo,Flags
+192.168.100.65,mixunderax.com,DNS,N/A
+192.26.92.30,mixunderax.com,DNS,N/A
+192.168.100.65,mixunderax.com,DNS,N/A
+97.74.99.64,mixunderax.com,DNS,N/A
+192.168.100.65,alforcargo.com,DNS,N/A
+192.26.92.30,alforcargo.com,DNS,N/A
+87.106.139.101,192.168.100.65,TCP,0x0011
+159.65.241.220,192.168.100.65,TCP,0x0011
+192.168.100.65,87.106.139.101,TCP,0x0011
+192.168.100.65,159.65.241.220,TCP,0x0011
