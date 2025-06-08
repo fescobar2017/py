@@ -1,7 +1,6 @@
 import csv
 import pyshark
 
-
 def funcion1():
     capture = pyshark.FileCapture('/home/francisco/Escritorio/Python/Clase-pyshark/pesadilla.pcapng',display_filter='dns.qry.name or tcp.flags == 0x11')
     resultados = []
