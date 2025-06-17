@@ -21,7 +21,7 @@ def login():
             print(" Acceso autorizado ")
             return True
         else:
-            intentos = intentos + 1
+            intentos +=1
             print(f" {intentos}/3 intentos")
             
     print (" Saliendo por intentos fallidos")                
@@ -31,7 +31,7 @@ def menu():
      
     while True:
         try:
-                    print('''
+                    print('''sdf
                 Menu
                 1) Funcion 1
                 2) Funcion 2
