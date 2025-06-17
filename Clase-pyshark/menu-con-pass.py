@@ -28,22 +28,28 @@ def login():
     return False
 
 def menu():
+     
     while True:
-        print('''
-    Menu
-    1) Funcion 1
-    2) Funcion 2
-    3) Funcion 3
-    4) Salir                                        
-            ''')
-        opcion = int(input("ingrese su opcion:"))
-        
-        if opcion == 1: funcion1()
-        elif opcion == 2:funcion2()
-        elif opcion == 3 :funcion3()
-        elif opcion == 4 : break
-        else : print(" Reintentar")
+        try:
+                    print('''
+                Menu
+                1) Funcion 1
+                2) Funcion 2
+                3) Funcion 3
+                4) Salir                                        
+                        ''')
+                    opcion = int(input("ingrese su opcion:"))
+                    
+                    if opcion == 1: funcion1()
+                    elif opcion == 2:funcion2()
+                    elif opcion == 3 :funcion3()
+                    elif opcion == 4 : break
+                    else : print(" Reintentar")
 
+        except ValueError:
+            print(" Reintentar")
+            continue
 
+    
 if login():
     menu()
