@@ -36,7 +36,23 @@ def login():
             print(f" {intentos}/3 intentos")
             continue
 
-    print("¡Ah, ah, ah! ¡No dijiste la palabra mágica!")               
+    print("¡Ah, ah, ah! ¡No dijiste la palabra mágica!\n")
+    print('''
+      ______
+   .-'      '-.
+  /            \
+ |              |
+ |,  .-.  .-.  ,|
+ | )(_o/  \o_)( |
+ |/     /\     \|
+ (_     ^^     _)
+  \__|IIIIII|__/
+   | \IIIIII/ |
+   \          /
+    `--------`
+   SYSTEM FAILURE
+ DENNIS NEDRY BLOQUEÓ EL SISTEMA
+        ''')              
     return False
 
 def menu():
