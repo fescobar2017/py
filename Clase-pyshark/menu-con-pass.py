@@ -22,6 +22,7 @@ def login():
             return True
         else:
             intentos +=1
+            print("¡Ah, ah, ah! ¡No dijiste la palabra mágica!")
             print(f" {intentos}/3 intentos")
             
     print (" Saliendo por intentos fallidos")                
