@@ -1,4 +1,7 @@
 import pyshark
+import random
+
+
 usersesion = "a"
 passsesion = "b"
 
@@ -14,32 +17,40 @@ def funcion3():
 def login():
     intentos = 0
     while intentos < 3:
-        loginsesion = input("Ingrese su usuario :")
-        loginpass = input("Ingrese su contraseña :")
+        try:
+            a = random.randint(1, 10)
+            b = random.randint(1, 10)
+            loginsesion = input("Ingrese su usuario :")
+            loginpass = input("Ingrese su contraseña :")
+            suma = int(input(f"Verificacion Humana ¿Cuánto es {a} + {b}? "))
 
-        if usersesion == loginsesion and loginpass == passsesion:
-            print(" Acceso autorizado ")
-            return True
-        else:
+            if usersesion == loginsesion and loginpass == passsesion and suma ==(a+b):
+                print(" Acceso autorizado ")
+                return True
+            else:
+                intentos +=1
+                
+                print(f" {intentos}/3 intentos")
+        except ValueError:
             intentos +=1
-            print("¡Ah, ah, ah! ¡No dijiste la palabra mágica!")
             print(f" {intentos}/3 intentos")
-            
-    print (" Saliendo por intentos fallidos")                
+            continue
+
+    print("¡Ah, ah, ah! ¡No dijiste la palabra mágica!")               
     return False
 
 def menu():
      
     while True:
         try:
-                    print('''sdf
+                    print('''
                 Menu
                 1) Funcion 1
                 2) Funcion 2
                 3) Funcion 3
                 4) Salir                                        
                         ''')
-                    opcion = int(input("ingrese su opcion:"))
+                    opcion = int(input("Ingrese su opcion:"))
                     
                     if opcion == 1: funcion1()
                     elif opcion == 2:funcion2()
