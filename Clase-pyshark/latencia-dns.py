@@ -1,7 +1,7 @@
 import pyshark
 
 INTERFAZ = 'any'
-captura = pyshark.LiveCapture(interface=INTERFAZ, display_filter='dns')
+captura = pyshark.LiveCapture(interface=INTERFAZ, bpf_filter='dns')
 consultas_dns = {}
 
 

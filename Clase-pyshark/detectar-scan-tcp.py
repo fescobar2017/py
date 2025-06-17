@@ -2,7 +2,7 @@ import pyshark
 INTERFAZ = 'any'
 limite = 10
 scaneados = {}
-capture = pyshark.LiveCapture(interface=INTERFAZ,display_filter='tcp')
+capture = pyshark.LiveCapture(interface=INTERFAZ,bpf_filter='tcp')
 
 for packet in capture:
     try:
